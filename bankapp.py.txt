@@ -1,0 +1,44 @@
+acc_no=int(input("enter the account number:"))
+email=input("enter the mail id:")
+regexp='^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
+if regexp in email:
+    print("valid")
+mobno=int(input())
+if len(mobno)==10 or mobno[0]==9:
+    print("valid")
+else:
+    print("invalid")
+pwd=input("enter the password:")
+if len(pwd)!=6:
+    print("password must be atleast 6 characters:")
+a=input("1.check bal/2.withdraw/3.deposit/4.ministatement")
+print(a)
+choice=int(input("enter your choice:"))
+if choice==1:
+      x=random.randint(2000,3000)
+      print("acc_no is:",x)
+      bal=6000
+def check():
+      print("available balance is:",bal)
+      check()
+if choice==2:
+    def withdraw():
+       minbal=5000
+       withamt=int(input("enter the withdraw amount:"))
+       temp=bal+minbal
+       if withamt>temp:
+           bal=bal-withamt
+           print("amount withdrawed:")
+           withdraw()
+if choice==3:
+    def deposit():
+        new_dep=int(input("amount to be deposited:"))
+        deplist=[]
+        deplist.append(new_dep)
+        print("the amount has been added:")
+        deposit()
+if choice==4:
+    def minsta():
+       print("email:",email)
+       print("accno:",x)
+       print("balance:",bal)
